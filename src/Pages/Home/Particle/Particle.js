@@ -1,7 +1,11 @@
+import { Button, Container, Divider, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { tsParticles } from 'tsparticles';
 import Navigation from '../../Navigation/Navigation';
 import './Particle.css';
+import portfolio from './../../../images/pp.png';
+import resume from './../../../images/resume.pdf';
+import { Box } from '@mui/system';
 
 const Particle = () => {
   tsParticles.load('tsparticles', {
@@ -25,7 +29,7 @@ const Particle = () => {
           duration: 2,
           opacity: 0.8,
           size: 40,
-          speed: 3,
+          speed: 1,
         },
         grab: { distance: 400, line_linked: { opacity: 1 } },
         push: { particles_nb: 4 },
@@ -49,7 +53,7 @@ const Particle = () => {
         enable: true,
         out_mode: 'bounce',
         random: false,
-        speed: 8,
+        speed: 1,
         straight: false,
       },
       number: { density: { enable: false, value_area: 800 }, value: 30 },
@@ -63,7 +67,7 @@ const Particle = () => {
           fill: true,
           font: 'Verdana',
           style: '',
-          value: ['testo 1', 'testo 2', 'testo 3', 'testo 4', 'testo 5'],
+          value: ['HTML5', 'CSS3', 'JavaScript', 'ReactJs', 'NodeJs'],
           weight: '400',
         },
         image: {
@@ -98,7 +102,83 @@ const Particle = () => {
         <Navigation />
       </div>
       <div id='tsparticles'></div>
-      <form>
+      <Container className='home-section'>
+        <Grid container spacing={2}>
+          <Grid
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            item
+            xs={12}
+            md={6}
+          >
+            <img src={portfolio} className='ppImg' alt='' />
+          </Grid>
+          <Grid
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            item
+            xs={12}
+            md={6}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                width: '100%',
+                m: 1,
+                p: 1,
+              }}
+              className='home-text'
+            >
+              <Typography
+                variant='h3'
+                color='whitesmoke'
+                gutterBottom
+                component='div'
+                sx={{ textAlign: 'center' }}
+              >
+                Welcome To <br />
+                <span style={{ color: 'goldenrod' }}>My World</span>
+              </Typography>
+              <Typography
+                variant='h5'
+                color='whitesmoke'
+                gutterBottom
+                component='div'
+                sx={{ textAlign: 'center' }}
+              >
+                I'm Md. Iqbal Hossain
+              </Typography>
+              <Typography
+                variant='h5'
+                color='goldenrod'
+                gutterBottom
+                component='div'
+                sx={{ textAlign: 'center' }}
+              >
+                Full Stack Web Developer
+              </Typography>
+              <a
+                rel='noreferrer'
+                style={{ textDecoration: 'none', margin: '0 auto' }}
+                href={resume}
+                target='_blank'
+              >
+                <Button variant='contained'>DownLoad Resume</Button>
+              </a>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+      {/*  <form>
         <h3>Login Here</h3>
         <label for='username'>Username</label>
         <input type='text' placeholder='Email or Phone' id='username'></input>
@@ -113,23 +193,7 @@ const Particle = () => {
             <i class='fab fa-facebook'></i> Facebook
           </div>
         </div>
-      </form>
-      {/* <div id="tsparticles"></div>
-<form>
-  <h3>Login Here</h3>
-
-  <label for="username">Username</label>
-  <input type="text" placeholder="Email or Phone" id="username">
-
-  <label for="password">Password</label>
-  <input type="password" placeholder="Password" id="password">
-
-  <button>Log In</button>
-  <div class="social">
-    <div class="go"><i class="fab fa-google"></i> Google</div>
-    <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
-  </div>
-</form> */}
+      </form> */}
     </div>
   );
 };
