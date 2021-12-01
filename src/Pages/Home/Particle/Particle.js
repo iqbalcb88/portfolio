@@ -13,7 +13,7 @@ const Particle = () => {
     fullScreen: { enable: false },
     detectRetina: true,
     interactivity: {
-      detect_on: 'canvas',
+      detect_on: 'window',
       events: {
         onclick: { enable: false, mode: 'push' },
         onhover: {

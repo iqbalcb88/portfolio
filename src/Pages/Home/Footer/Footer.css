@@ -1,0 +1,12 @@
+.footer {
+  background: linear-gradient(#333, #333 50%, #eee 75%, #333 75%);
+
+  box-sizing: border-box;
+}
+.footer p {
+  margin: 0;
+  padding: 0;
+  color: goldenrod;
+  text-align: center;
+  padding: 1rem 0;
+}

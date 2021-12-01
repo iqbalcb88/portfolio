@@ -63,13 +63,13 @@ const Navigation = () => {
         </ListItem>
         <Divider />
         <ListItem button>
-          <Link className={listItem} to='/allProducts'>
+          <Link className={listItem} to='/projects'>
             Projects
           </Link>
         </ListItem>
         <Divider />
         <ListItem button>
-          <Link className={listItem} to='/dashBoard'>
+          <Link className={listItem} to='/contact'>
             Contact
           </Link>
         </ListItem>{' '}
@@ -98,6 +98,7 @@ const Navigation = () => {
               variant='h6'
               component='div'
               sx={{ flexGrow: 1 }}
+              color='goldenrod'
             >
               Hello!
             </Typography>
@@ -105,10 +106,10 @@ const Navigation = () => {
               <Link className={navItem} to='/home'>
                 <Button color='inherit'>Home</Button>
               </Link>
-              <Link className={navItem} to='/allProducts'>
+              <Link className={navItem} to='/projects'>
                 <Button color='inherit'>Projects</Button>
               </Link>
-              <Link className={navItem} to='/dashBoard'>
+              <Link className={navItem} to='/contact'>
                 <Button color='inherit'>Contact</Button>
               </Link>
             </Box>
