@@ -1,0 +1,23 @@
+.contact {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.contact Form {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+}
+.contact-bg {
+  background: radial-gradient(
+    circle at 100%,
+    #333,
+    #333 50%,
+    #eee 75%,
+    #333 75%
+  );
+  width: 100%;
+  height: 100vh;
+  z-index: 889;
+  position: relative;
+}

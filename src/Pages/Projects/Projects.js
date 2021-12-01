@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '../Navigation/Navigation';
 import './Project.css';
 
@@ -20,9 +21,10 @@ const Projects = () => {
       <Container>
         <Typography
           color='whitesmoke'
-          variant='h2'
+          variant='h1'
           gutterBottom
           component='div'
+          sx={{ textAlign: 'center' }}
         >
           Projects
         </Typography>
@@ -39,7 +41,7 @@ const Projects = () => {
 export default Projects;
 
 const Project = ({ project }) => {
-  const { name, description, url, live } = project;
+  const { name, description, url, live, id } = project;
   return (
     <Grid item xs={12} md={4}>
       <Card sx={{ maxWidth: 345 }}>
@@ -62,7 +64,9 @@ const Project = ({ project }) => {
           </Typography>
         </CardContent>
         <CardActions sx={{ display: 'flex', justifyContent: 'space-around' }}>
-          <Button variant='contained'>Details</Button>
+          <Link to={`/details/${id}`}>
+            <Button variant='contained'>Details</Button>
+          </Link>
           <a
             target='_blank'
             rel='noreferrer'
@@ -78,13 +82,14 @@ const Project = ({ project }) => {
   );
 };
 
-const allProjects = [
+export const allProjects = [
   {
     name: 'Mrittika Pottery',
     description:
       'Mrittika is an ethical brand to empower rural artisans to rise above poverty    Mrittika is truly a household brand in bangladesh growing presence outside of bangladesh. As an user anyone can place order amd manage order users orders will be on pending status until confirmed by an admin users will have multiple login options an admin can see more options on dashboard than a user admin can add new product remove product admin have priviliges to change product status of any users and updated status will be shown on users dashboard   admin can make any user an admin admin able to cancalled any users orders an admin can manage other users orders',
     url: 'https://i.ibb.co/J5F2Mt1/m1.png',
     live: 'https://mrittika-pottery.web.app/',
+    id: 1,
   },
   {
     name: 'Fantasy Park',
@@ -92,6 +97,7 @@ const allProjects = [
       'This sites created conceptually on theme park.Admin/User Login System Implemented. Admin Can See All Orders also manage them.Admin able to add new event and delete exist events.users able to place order and manage there order . Users can see theres order review order place order with some additional information. Its responsive for mobile and pc',
     url: 'https://i.ibb.co/JR65R4w/f1.png',
     live: 'https://fantasypark-3c085.web.app/',
+    id: 2,
   },
   {
     name: 'Fantasy Park',
@@ -99,5 +105,6 @@ const allProjects = [
       'This sites created based on eye care facility.    It is an eye hospital website.    you can take consultancy online. online payment system online appointment system',
     url: 'https://i.ibb.co/Kh8TQ7B/v1.png',
     live: 'https://vision-care-hospital.web.app/',
+    id: 3,
   },
 ];
